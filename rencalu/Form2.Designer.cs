@@ -42,7 +42,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.renclau_low_resolution_logo_black_on_transparent_background___Copy;
+            pictureBox1.Image = renclau.Properties.Resources.renclau_low_resolution_logo_black_on_transparent_background___Copy;
             pictureBox1.Location = new Point(12, 33);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(147, 141);
