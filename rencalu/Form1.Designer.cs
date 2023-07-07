@@ -33,6 +33,8 @@
             bt_cauta = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            copy = new Button();
+            modifica = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             // bt_cauta
             // 
             bt_cauta.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            bt_cauta.Location = new Point(263, 124);
+            bt_cauta.Location = new Point(266, 110);
             bt_cauta.Name = "bt_cauta";
             bt_cauta.Size = new Size(172, 37);
             bt_cauta.TabIndex = 1;
@@ -81,11 +83,33 @@
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
+            // copy
+            // 
+            copy.Location = new Point(183, 171);
+            copy.Name = "copy";
+            copy.Size = new Size(126, 23);
+            copy.TabIndex = 4;
+            copy.Text = "Copiaza baza de date";
+            copy.UseVisualStyleBackColor = true;
+            copy.Click += copy_Click;
+            // 
+            // modifica
+            // 
+            modifica.Location = new Point(391, 171);
+            modifica.Name = "modifica";
+            modifica.Size = new Size(128, 23);
+            modifica.TabIndex = 5;
+            modifica.Text = "Modifica adresa";
+            modifica.UseVisualStyleBackColor = true;
+            modifica.Click += modifica_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(531, 218);
+            Controls.Add(modifica);
+            Controls.Add(copy);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(bt_cauta);
@@ -105,5 +129,7 @@
         private Button bt_cauta;
         private PictureBox pictureBox1;
         private Label label1;
+        private Button copy;
+        private Button modifica;
     }
 }

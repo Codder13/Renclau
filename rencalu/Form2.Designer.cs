@@ -34,6 +34,8 @@
             label2 = new Label();
             textBox1 = new TextBox();
             save = new Button();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -52,23 +54,22 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(205, 46);
+            label1.Location = new Point(205, 33);
             label1.Name = "label1";
-            label1.Size = new Size(296, 20);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 4;
-            label1.Text = "Numărul introdus nu este în baza de date.";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(165, 66);
+            label2.Location = new Point(137, 9);
             label2.Name = "label2";
-            label2.Size = new Size(364, 20);
+            label2.Size = new Size(0, 20);
             label2.TabIndex = 5;
-            label2.Text = "completează adresa și salvează-o pentru a o adăuga";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
             // 
             // textBox1
             // 
@@ -81,7 +82,7 @@
             // 
             // save
             // 
-            save.Location = new Point(310, 138);
+            save.Location = new Point(312, 138);
             save.Name = "save";
             save.Size = new Size(72, 26);
             save.TabIndex = 7;
@@ -89,11 +90,32 @@
             save.UseVisualStyleBackColor = true;
             save.Click += save_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(325, 70);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 15);
+            label3.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(289, 70);
+            label4.Name = "label4";
+            label4.Size = new Size(111, 20);
+            label4.TabIndex = 9;
+            label4.Text = "Adauga adresa";
+            label4.Click += label4_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(531, 218);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(save);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -115,5 +137,7 @@
         private Label label2;
         private TextBox textBox1;
         private Button save;
+        private Label label3;
+        private Label label4;
     }
 }

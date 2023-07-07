@@ -1,5 +1,7 @@
 using iTextSharp.text.pdf;
+using Microsoft.Office.Interop.Excel;
 using System.Numerics;
+using System.Windows.Forms;
 using Document = iTextSharp.text.Document;
 using Rectangle = iTextSharp.text.Rectangle;
 
@@ -7,13 +9,18 @@ namespace rencalu
 {
     public partial class Form1 : Form
     {
-        public const string Path = @"C:\All the stuff\Programing\data.txt";
+        public const string Path = "data.txt";
         List<string> addr = new List<string>();
         List<string> tel = new List<string>();
+
+        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+
 
         public Form1()
         {
             InitializeComponent();
+            read_file();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -26,43 +33,11 @@ namespace rencalu
 
         }
 
-        /*
-        public static List<string> make_lists(string filePath, string sheetName, string columnName)
-        {
-            List<string> columnValues = new List<string>();
-
-            Excel.Application excelApp = new Excel.Application();
-            Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
-            Excel.Worksheet worksheet = workbook.Sheets[sheetName];
-            Excel.Range range = worksheet.UsedRange;
-
-            int columnIndex = 0;
-            for (int i = 1; i <= range.Columns.Count; i++)
-            {
-                if (range.Cells[1, i].Value2.ToString() == columnName)
-                {
-                    columnIndex = i;
-                    break;
-                }
-            }
-
-            for (int i = 2; i <= range.Rows.Count; i++)
-            {
-                columnValues.Add(range.Cells[i, columnIndex].Value2.ToString());
-            }
-
-            workbook.Close();
-            excelApp.Quit();
-
-            return columnValues;
-        }
-
-        */
 
         private void write2pdf(string Address, string Tel)
         {
-            string oldFile = @"C:\All the stuff\Programing\Chitanta.pdf";
-            string newFile = @"C:\All the stuff\Programing\Chitanta2.pdf";
+            string oldFile = "Chitanta.pdf";
+            string newFile = desktopPath + @"\chitanta.pdf";
 
             // open the reader
             PdfReader reader = new PdfReader(oldFile);
@@ -91,8 +66,8 @@ namespace rencalu
             fs.Close();
 
         }
-        
-        private void read_file()
+
+        public void read_file()
         {
             addr.Clear();
             tel.Clear();
@@ -108,13 +83,13 @@ namespace rencalu
 
         private void bt_cauta_Click(object sender, EventArgs e)
         {
-
             read_file();
 
             var search = textBox1.Text;
             int index = -1;
 
-            if (tel.Contains(search)){
+            if (tel.Contains(search))
+            {
                 index = tel.IndexOf(search);
             }
             else
@@ -126,63 +101,54 @@ namespace rencalu
                     read_file();
                     addr.Add(form_addr.addr);
                     tel.Add(search);
-                    index = tel.Count-1;
+                    index = tel.Count - 1;
                 }
-                
             }
 
 
-            if(index != -1)
+            if (index != -1)
             {
                 write2pdf(addr[index], tel[index]);
                 MessageBox.Show("PDF generat cu succes");
             }
-            
-
-
-
-
-            /*
-            var search = textBox1.Text;
-
-            Task<List<string>> task1 = Task.Run(() => make_lists(ExcelPath, "data", "Address"));
-
-            Task<List<string>> task2 = Task.Run(() => make_lists(ExcelPath, "data", "Tel"));
-
-
-
-            List<string> address = await task1;
-            List<string> numbers = await task2;
-
-
-            if (!numbers.Contains(search))
-            {
-                Form2 add_address = new Form2(search);
-                add_address.ShowDialog();
-
-                Task<List<string>> task3 = Task.Run(() => make_lists(ExcelPath, "data", "Address"));
-
-                Task<List<string>> task4 = Task.Run(() => make_lists(ExcelPath, "data", "Tel"));
-
-                address = await task3;
-                numbers = await task4;
-
-                var index = numbers.IndexOf(search);
-                write2pdf(address[index+1], numbers[index+1]);
-            }
-            else
-            {
-                var index = numbers.IndexOf(search);
-                write2pdf(address[index], numbers[index]);
-            }
-            */
-
 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void copy_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = "data.txt";
+
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+
+                File.Copy("data.txt", save.FileName);
+            }
+
+
+
+        }
+
+        private void modifica_Click(object sender, EventArgs e)
+        {
+            read_file();
+
+            var search = textBox1.Text;
+            
+
+            if(tel.Contains(search))
+            {
+                Form3 form_addr = new Form3(search, addr, tel);
+                form_addr.ShowDialog();
+            }
+            
+            
         }
     }
 }
