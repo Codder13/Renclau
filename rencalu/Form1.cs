@@ -136,7 +136,7 @@ namespace rencalu
             if (save.ShowDialog() == DialogResult.OK)
             {
 
-                File.Copy("data.txt", save.FileName);
+                File.Copy("data.txt", save.FileName, true);
             }
 
 
