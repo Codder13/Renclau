@@ -24,7 +24,7 @@
             addr = textBox1.Text;
 
 
-            string text = '\n' + addr + " @ " + telefon;
+            string text = addr + " @ " + telefon + '\n';
 
             File.AppendAllTextAsync(Form1.Path, text);
 
@@ -43,5 +43,14 @@
         {
 
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                save.PerformClick();
+            }
+        }
+
     }
 }

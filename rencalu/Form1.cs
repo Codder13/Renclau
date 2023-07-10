@@ -1,7 +1,4 @@
 using iTextSharp.text.pdf;
-using Microsoft.Office.Interop.Excel;
-using System.Numerics;
-using System.Windows.Forms;
 using Document = iTextSharp.text.Document;
 using Rectangle = iTextSharp.text.Rectangle;
 
@@ -36,7 +33,7 @@ namespace rencalu
 
         private void write2pdf(string Address, string Tel)
         {
-            string oldFile = "Chitanta.pdf";
+            string oldFile = "chitanta.pdf";
             string newFile = desktopPath + @"\chitanta.pdf";
 
             // open the reader
@@ -59,6 +56,16 @@ namespace rencalu
             cb.ShowTextAligned(PdfContentByte.ALIGN_LEFT, Tel, 36, 327, 0);
             cb.EndText();
 
+            document.NewPage();
+
+            PdfContentByte cb2 = writer.DirectContentUnder;
+            PdfImportedPage page2 = writer.GetImportedPage(reader, 2);
+            cb2.AddTemplate(page2, 0, 0);
+            cb2.BeginText();
+            cb2.SetFontAndSize(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED), 12);
+            cb2.ShowTextAligned(PdfContentByte.ALIGN_LEFT, Address, 36, 370, 0);
+            cb2.ShowTextAligned(PdfContentByte.ALIGN_LEFT, Tel, 36, 327, 0);
+            cb2.EndText();
 
             // close the document and writer
             document.Close();
@@ -66,6 +73,7 @@ namespace rencalu
             fs.Close();
 
         }
+
 
         public void read_file()
         {
@@ -140,15 +148,24 @@ namespace rencalu
             read_file();
 
             var search = textBox1.Text;
-            
 
-            if(tel.Contains(search))
+
+            if (tel.Contains(search))
             {
                 Form3 form_addr = new Form3(search, addr, tel);
                 form_addr.ShowDialog();
             }
-            
-            
+
+
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_cauta.PerformClick();
+            }
+        }
+
     }
 }

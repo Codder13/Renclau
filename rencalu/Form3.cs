@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace rencalu
+﻿namespace rencalu
 {
     public partial class Form3 : Form
     {
@@ -36,28 +26,38 @@ namespace rencalu
             {
                 sw.Write(string.Empty);
             }
-            for(int i=0; i < tel.Count;i++)
+            for (int i = 0; i < tel.Count; i++)
             {
                 string text = addr[i] + " @ " + tel[i] + '\n';
                 File.AppendAllTextAsync(Form1.Path, text);
             }
-                
 
-            
+
+
         }
 
         private void switch_btn_Click(object sender, EventArgs e)
         {
             var index = tel.IndexOf(telefon);
 
-            if(textBox1.Text != null)
+            if (textBox1.Text != null)
             {
                 addr[index] = textBox1.Text;
             }
-            
+
             rewrite_data();
 
             this.Close();
         }
+
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                switch_btn.PerformClick();
+            }
+        }
+
     }
 }
