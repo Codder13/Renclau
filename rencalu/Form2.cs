@@ -26,7 +26,7 @@
 
             string text = addr + " @ " + telefon + '\n';
 
-            File.AppendAllTextAsync(Form1.Path, text);
+            File.AppendAllText(Form1.Path, text);
 
             saved = true;
 

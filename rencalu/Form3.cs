@@ -29,7 +29,7 @@
             for (int i = 0; i < tel.Count; i++)
             {
                 string text = addr[i] + " @ " + tel[i] + '\n';
-                File.AppendAllTextAsync(Form1.Path, text);
+                File.AppendAllText(Form1.Path, text);
             }
 
 
