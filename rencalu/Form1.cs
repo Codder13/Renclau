@@ -117,9 +117,10 @@ namespace rencalu
             if (index != -1)
             {
                 write2pdf(addr[index], tel[index]);
-                MessageBox.Show("PDF generat cu succes");
-            }
 
+                Font font = new Font("Segoe UI", 26);
+                MessageBox.Show("PDF generat cu succes", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

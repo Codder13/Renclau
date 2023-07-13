@@ -50,28 +50,30 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(294, 58);
+            label4.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(246, 33);
             label4.Name = "label4";
-            label4.Size = new Size(118, 20);
+            label4.Size = new Size(218, 37);
             label4.TabIndex = 10;
-            label4.Text = "Modifica adresa";
+            label4.Text = "Modifica adresa:";
             label4.Click += label4_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(203, 97);
+            textBox1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(201, 95);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Adresa noua";
-            textBox1.Size = new Size(302, 23);
+            textBox1.Size = new Size(302, 36);
             textBox1.TabIndex = 11;
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // switch_btn
             // 
-            switch_btn.Location = new Point(314, 137);
+            switch_btn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            switch_btn.Location = new Point(296, 147);
             switch_btn.Name = "switch_btn";
-            switch_btn.Size = new Size(75, 23);
+            switch_btn.Size = new Size(120, 39);
             switch_btn.TabIndex = 12;
             switch_btn.Text = "Modifica";
             switch_btn.UseVisualStyleBackColor = true;

@@ -41,10 +41,11 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(183, 70);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Nr. telefon";
-            textBox1.Size = new Size(336, 23);
+            textBox1.Size = new Size(336, 32);
             textBox1.TabIndex = 0;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -52,6 +53,7 @@
             // bt_cauta
             // 
             bt_cauta.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            bt_cauta.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             bt_cauta.Location = new Point(266, 110);
             bt_cauta.Name = "bt_cauta";
             bt_cauta.Size = new Size(172, 37);
@@ -74,10 +76,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(248, 33);
+            label1.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(165, 21);
             label1.Name = "label1";
-            label1.Size = new Size(199, 20);
+            label1.Size = new Size(356, 37);
             label1.TabIndex = 3;
             label1.Text = "Introdu numărul de telefon:";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,21 +87,23 @@
             // 
             // copy
             // 
-            copy.Location = new Point(183, 171);
+            copy.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            copy.Location = new Point(165, 171);
             copy.Name = "copy";
-            copy.Size = new Size(126, 23);
+            copy.Size = new Size(147, 35);
             copy.TabIndex = 4;
-            copy.Text = "Copiaza baza de date";
+            copy.Text = "Copiaza";
             copy.UseVisualStyleBackColor = true;
             copy.Click += copy_Click;
             // 
             // modifica
             // 
+            modifica.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             modifica.Location = new Point(391, 171);
             modifica.Name = "modifica";
-            modifica.Size = new Size(128, 23);
+            modifica.Size = new Size(128, 35);
             modifica.TabIndex = 5;
-            modifica.Text = "Modifica adresa";
+            modifica.Text = "Modifica";
             modifica.UseVisualStyleBackColor = true;
             modifica.Click += modifica_Click;
             // 

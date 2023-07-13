@@ -73,18 +73,20 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(215, 109);
+            textBox1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(217, 96);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Adresa";
-            textBox1.Size = new Size(267, 23);
+            textBox1.Size = new Size(267, 36);
             textBox1.TabIndex = 6;
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // save
             // 
-            save.Location = new Point(312, 138);
+            save.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            save.Location = new Point(283, 147);
             save.Name = "save";
-            save.Size = new Size(72, 26);
+            save.Size = new Size(135, 38);
             save.TabIndex = 7;
             save.Text = "Salveaza";
             save.UseVisualStyleBackColor = true;
@@ -101,12 +103,12 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(289, 70);
+            label4.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(247, 48);
             label4.Name = "label4";
-            label4.Size = new Size(111, 20);
+            label4.Size = new Size(205, 37);
             label4.TabIndex = 9;
-            label4.Text = "Adauga adresa";
+            label4.Text = "Adauga adresa:";
             label4.Click += label4_Click;
             // 
             // Form2
